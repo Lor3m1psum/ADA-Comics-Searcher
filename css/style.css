@@ -1,0 +1,22 @@
+  #introVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    min-height: 100%;
+    z-index: -100;
+    background-size: cover;
+  }
+  .wrapper {
+    padding-top: 26%;
+    padding-bottom: 20%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
