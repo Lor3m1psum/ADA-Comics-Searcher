@@ -21,37 +21,40 @@
     <title>ADA | CS</title>
   </head>
   <body>
-    <video
-      src="assets/Videos/video_MarvelComics.mp4"
-      autoplay
-      playsinline
-      muted
-      id="introVideo"
-    ></video>
-    <audio autoplay>
-      <source src="assets/Audios/PROJECT-ADA.mp3" type="audio/mpeg" />
-    </audio>
-    <div class="wrapper bran name" id="branName">
-      <div class="row">
-        <div id="title">
-          <span class="page-title"> Ada Comics Searcher </span>
+    <div class="background-wrapper">
+      <video
+        src="assets/Videos/video_MarvelComics.mp4"
+        autoplay
+        playsinline
+        muted
+        id="introVideo"
+      ></video>
+      <audio autoplay>
+        <source src="assets/Audios/PROJECT-ADA.mp3" type="audio/mpeg" />
+      </audio>
+      <div class="wrapper">
+        <div class="button-init">
+          <button id="enter-btn" type="button" class="btn btn-outline-light">
+            Enter
+          </button>
         </div>
-        <div id="logo" class="logo">
-          <span>A</span>
-          <span>D</span>
-          <span>A</span>
-          <span>|</span>
-          <span>C</span>
-          <span>S</span>
+        <div class="brand name" id="brandName">
+          <div class="enter">
+            <div id="title">
+              <span class="page-title">ADA Comics Searcher</span>
+            </div>
+            <br />
+            <div id="logo" class="logo">
+              <span>A</span>
+              <span>D</span>
+              <span>A</span>
+              <span>|</span>
+              <span>C</span>
+              <span>S</span>
+            </div>
+          </div>
+          <script src="./app.js"></script>
         </div>
-        <button
-          id="enter-btn"
-          type="button"
-          class="btn btn-outline-light fw-semibold"
-        >
-          Enter
-        </button>
-        <script src="./app.js"></script>
       </div>
     </div>
   </body>
