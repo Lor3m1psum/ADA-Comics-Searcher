@@ -1,0 +1,19 @@
+{
+  "name": "buscador-de-comics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lor3m1psum/buscador-de-comics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lor3m1psum/buscador-de-comics/issues"
+  },
+  "homepage": "https://github.com/Lor3m1psum/buscador-de-comics#readme"
+}
