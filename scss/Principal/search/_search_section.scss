@@ -1,0 +1,73 @@
+@import "../common/mixin";
+
+.search {
+  margin: 60px 10px 80px;
+  &-container {
+    display: flex;
+    @include flex-wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+  &-title {
+    font-size: 200;
+    font-weight: 500;
+    color: rgb(53, 128, 189);
+    text-shadow: 0px 3px 0px #d1f3fa, 0px 5px 5px rgba(0, 0, 0, 0.15),
+      0px 15px 5px rgba(0, 0, 0, 0.1), 0px 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  &-input {
+    position: relative;
+    border: 0;
+    min-width: 40%;
+    width: 100px;
+    padding: 5px 15px;
+    border-radius: 0;
+    align-self: center;
+    font-size: large;
+    font-weight: 400;
+    box-sizing: border-box;
+  }
+  &-input-group-text {
+    width: 30px;
+  }
+
+  &-button {
+    margin-left: 30px;
+    padding: 10px 15px;
+  }
+}
+.fa-search {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form-control {
+  min-width: 280px;
+  max-width: 450px;
+}
+
+.filter-selects {
+  @include flex-espaciar;
+  @include flex-wrap;
+}
+
+label {
+  font-size: 50;
+  font-weight: 500;
+  color: rgb(53, 128, 189);
+  margin-right: 12px;
+  min-width: 250px;
+}
+select {
+  font-size: 15px;
+  font-weight: 400;
+  min-width: 160px;
+  border: none;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  &:focus {
+    outline-color: #add1fd;
+  }
+}

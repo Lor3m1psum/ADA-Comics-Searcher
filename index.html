@@ -11,17 +11,26 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="../css/main.css" />
     <title>ADA | CS</title>
   </head>
   <body>
-    <div class="background-wrapper">
+    <!-------------------------------------------
+                  INITIAL PAGE
+    --------------------------------------------->
+    <div class="init-page" id="init-page">
       <video
         src="assets/Videos/video_MarvelComics.mp4"
         autoplay
@@ -29,7 +38,7 @@
         muted
         id="introVideo"
       ></video>
-      <audio autoplay>
+      <audio id="backAudio" autoplay>
         <source src="assets/Audios/PROJECT-ADA.mp3" type="audio/mpeg" />
       </audio>
       <div class="wrapper">
@@ -53,9 +62,219 @@
               <span>S</span>
             </div>
           </div>
-          <script src="./app.js"></script>
         </div>
       </div>
     </div>
+    <!-------------------------------------------
+                  HEADER
+    --------------------------------------------->
+    <header class="header hidden" id="header">
+      <div class="banner">
+        <img
+          class="banner-image"
+          src="./assets/Images/marvelHeader.jpg"
+          alt="Marvel comics banner"
+        />
+        <div class="banner-title">
+          <h1>
+            <span class="ada">ADA</span> <span class="divider">|</span>
+            <span class="comics">CS</span>
+          </h1>
+        </div>
+      </div>
+    </header>
+    <!-------------------------------------------
+                  MAIN SECTION
+    --------------------------------------------->
+    <main class="column hidden" id="main">
+      <!-------------------------------------------
+                  SEARCH SECTION
+    --------------------------------------------->
+      <div class="search">
+        <div class="search-title">
+          <h2>SEARCH</h2>
+        </div>
+        <br />
+        <div class="search-container">
+          <!-- by inputs -->
+          <div class="search-input input-group mb-3">
+            <span class="search-input-group-text"
+              ><i class="fas fa-search" aria-hidden="true"></i
+            ></span>
+            <input
+              class="form-control search-input"
+              type="text"
+              id="search-input"
+              placeholder="Enter your search term"
+              aria-describedby="inputGroup-sizing-default"
+              aria-labelledby="search-title"
+            />
+          </div>
+          <!-- by filter type -->
+          <div class="filter-selects">
+            <div class="filter-container">
+              <label for="filter-type"
+                >TYPE
+                <select
+                  class="form-select"
+                  name="filter-type"
+                  id="filter-type-by"
+                >
+                  <option value="comics">COMICS</option>
+                  <option value="characters">CHARACTERS</option>
+                </select>
+              </label>
+              <label for="filter-sort"
+                >SORT
+                <select
+                  name="sort-comics"
+                  class="select-sort-comics"
+                  id="sort-comics"
+                >
+                  <option value="AZ-comics" class="AZ-comics">A-Z</option>
+                  <option value="ZA-comics" class="AZ-comics">Z-A</option>
+                  <option value="newer-comics" class="newer-comics">
+                    NEWER COMICS
+                  </option>
+                  <option value="older-comics" class="older-comics">
+                    OLDER COMICS
+                  </option>
+                </select>
+                <select
+                  name="sort-characters"
+                  class="select-sort-characters hidden"
+                  id="sort-characters"
+                >
+                  <option value="AZ-character" class="AZ-character">A-Z</option>
+                  <option value="ZA-character" class="ZA-character">Z-A</option>
+                </select>
+              </label>
+            </div>
+            <button id="search-button" class="search-button" type="button">
+              SEARCH
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-------------------------------------------
+                  COMICS SECTION
+      --------------------------------------------->
+      <section id="comics-section" class="results-section">
+        <h2 class="results-title">RESULTS</h2>
+        <p class="show-number-results">
+          <span class="results-number"></span>Results
+        </p>
+        <!-- results-->
+        <div id="results-section" class="results">
+          <!--------spinner loading-------------->
+          <div id="spinner" class="spinner-wrapper">
+            <svg
+              class="spinner"
+              width="65px"
+              height="65px"
+              viewBox="0 0 66 66"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                class="path"
+                fill="none"
+                stroke-width="6"
+                stroke-linecap="round"
+                cx="33"
+                cy="33"
+                r="30"
+              ></circle>
+            </svg>
+          </div>
+        </div>
+      </section>
+      <section class="comics-section hidden"></section>
+      <section class="characters-section hidden"></section>
+      <!-------------------------------------------
+                  PAGINATION
+      --------------------------------------------->
+      <div class="pagination">
+        <button
+          title="First page"
+          id="btn-first"
+          type="button"
+          class="btn-pag first-page"
+          aria-label="first page"
+        >
+          <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+        </button>
+        <button
+          title="Previous page"
+          id="btn-prev"
+          type="button"
+          class="btn-pag prev-page"
+          aria-label="previous page"
+        >
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </button>
+        <button
+          title="Next page"
+          id="btn-next"
+          type="button"
+          class="btn-pag next-page"
+          aria-label="next page"
+        >
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </button>
+        <button
+          title="Last page"
+          id="btn-last"
+          type="button"
+          class="btn-pag last-page"
+          aria-label="last page"
+        >
+          <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </main>
+    <!-------------------------------------------
+                  FOOTER
+    --------------------------------------------->
+    <footer class="footer hidden" id="footer">
+      <div id="contact" class="navbar">
+        <span class="text-light">Lorena Rosales</span>
+        <div id="contact-info" class="contact">
+          <div class="github-info">
+            <a
+              class="text-lighten-4 fa-2xl right text-light"
+              href="https://github.com/Lor3m1psum"
+              target="_blank"
+              data-message="Enlace a mi GitHub Lorena Rosales"
+            >
+              <i
+                id="github"
+                class="fa-brands fa-github line-height-icon text-light"
+              ></i>
+            </a>
+          </div>
+          <div class="linkedin-info">
+            <a
+              class="text-lighten-4 fa-2xl right text-light"
+              href="https://www.linkedin.com/in/rosales-pajaro-lorena/"
+              target="_blank"
+              data-message="Enlace a mi Linkedin Lorena Rosales"
+            >
+              <i
+                id="linkedin"
+                class="fa-brands fa-linkedin line-height-icon text-light"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="copyrigth">
+        <span class="text-light">© 2023 Copyright</span>
+      </div>
+    </footer>
+    <script src="./app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/8aa32c044e.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

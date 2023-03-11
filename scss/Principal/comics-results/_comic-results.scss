@@ -1,0 +1,32 @@
+.comics-section.hidden.hidden,
+.characters-section.hidden {
+  display: none;
+}
+.comics-section,
+.characters-section {
+  display: flex;
+  margin: 80px 10px 50px;
+}
+.comic-title,
+.character-portrait,
+.comic-cover {
+  max-width: 350px;
+  margin-right: 50px;
+}
+.comic-title,
+.character-name {
+  margin-top: 0;
+}
+
+.results-number,
+.results-title {
+  margin-left: 10px;
+}
+
+.results-title {
+  font-size: 200;
+  font-weight: 500;
+  color: rgb(53, 128, 189);
+  text-shadow: 0px 3px 0px #d1f3fa, 0px 5px 5px rgba(0, 0, 0, 0.15),
+    0px 15px 5px rgba(0, 0, 0, 0.1), 0px 10px 15px rgba(0, 0, 0, 0.1);
+}

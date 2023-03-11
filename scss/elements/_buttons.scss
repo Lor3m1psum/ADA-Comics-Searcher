@@ -1,0 +1,24 @@
+button {
+  @include button;
+  @include mouse;
+  &:not(:disabled):hover {
+    background-color: rgb(22, 91, 148);
+    color: white;
+    font-weight: 500;
+    font-size: large;
+    border-radius: 12;
+  }
+}
+.search-button {
+  background-color: #84d2ff;
+  color: #01164e;
+  font-weight: 500;
+  font-size: large;
+  stroke: #000e33;
+}
+
+button:focus,
+select:focus,
+input:focus {
+  stroke: rgb(101, 182, 204);
+}

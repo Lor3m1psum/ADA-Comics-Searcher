@@ -1,0 +1,58 @@
+footer {
+  width: 100%;
+  padding: 30px 0 40px;
+  background-color: rgb(61, 88, 119);
+  color: white;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  justify-content: space-between;
+}
+
+.contact-info {
+  min-width: 100px;
+  justify-content: space-between;
+}
+
+.linkedin-info {
+  margin: auto;
+  transition: all 0.5s;
+  transform: scale(1);
+
+  &:hover {
+    transform: scale(1.2) perspective(1px);
+  }
+}
+
+.github-info {
+  margin: auto;
+  transition: all 0.5s;
+  transform: scale(1);
+
+  &:hover {
+    transform: scale(1.2) perspective(1px);
+  }
+}
+
+.fa-linkedin {
+  margin-left: 20px;
+}
+
+.copyrigth {
+  display: block;
+  padding-top: 30px;
+  align-items: center;
+  justify-content: baseline;
+}
